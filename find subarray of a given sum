@@ -1,0 +1,31 @@
+class Main {  
+    static int subarray(int arr[], int n, int sum)  
+    {  
+        int currentsum = arr[0], begin = 0, i;  
+   
+        for (i = 1; i <= n; i++) {  
+           
+            while (currentsum > sum && begin < i - 1) {  
+                currentsum = currentsum - arr[begin];  
+                begin++;  
+            }  
+    if (currentsum == sum) {  
+              System.out.println(begin   + " and " + i-1);  
+          return 1;  
+            }  
+      currentsum = currentsum + arr[i];  
+        }  
+   
+   System.out.println("No subarray found");  
+        return 0;  
+    }  
+  public static void main(String[] args)  
+    {  
+         int [] array = {2,4,6,8,9} ;  
+int n=5;
+int sum=20;
+ subarray( array , n , sum ) ;  
+    }  
+}  
+       
+            
